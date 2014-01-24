@@ -101,7 +101,9 @@ GoogleContacts.prototype.getContacts = function (cb, contacts) {
 
   this._get({ type: 'contacts' }, receivedContacts);
   function receivedContacts(err, data) {
-    if (err) return cb(err);
+    if (err){
+      // return cb(err);
+    } 
 
     self._saveContactsFromFeed(data.feed);
 
